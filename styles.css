@@ -1,0 +1,106 @@
+:root {
+  --max-frame-width: 1920px;
+  --panel-border: clamp(2px, 0.2vw, 4px);
+  --content-gap: 0.82%;
+  --frame-padding-x: 0.48%;
+  --frame-padding-y: 0.52%;
+  --weather-column: 20.5%;
+  --weather-title-size: clamp(0.95rem, 2.2vw, 2.9rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(0.2rem, 0.8vw, 1rem);
+  background: linear-gradient(180deg, #12056b 0%, #7f7bc8 11%, #ffffff 31%, #ffe7da 82%, #ff8326 100%);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page-shell {
+  width: min(100%, var(--max-frame-width));
+}
+
+.info-board {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: grid;
+  grid-template-rows: 131fr 127fr 616fr 112fr 94fr;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.18);
+}
+
+.brand-band {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.brand-band--top {
+  background-image: url("./assets/header-top.jpg");
+}
+
+.brand-band--top-logos {
+  background-image: url("./assets/header-strip.jpg");
+}
+
+.brand-band--bottom-logos {
+  background-image: url("./assets/footer-strip.jpg");
+}
+
+.brand-band--bottom {
+  background-image: url("./assets/footer-bottom.jpg");
+}
+
+.content-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--weather-column);
+  gap: var(--content-gap);
+  padding: var(--frame-padding-y) var(--frame-padding-x);
+  background: #ffffff;
+}
+
+.panel {
+  min-width: 0;
+  background: #ffffff;
+  border: var(--panel-border) solid #111111;
+}
+
+.panel--weather {
+  display: grid;
+  place-items: center;
+}
+
+.panel--weather h1 {
+  margin: 0;
+  color: #121212;
+  font-size: var(--weather-title-size);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  transform: translateY(-4%);
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 0;
+  }
+
+  .page-shell {
+    width: 100vw;
+  }
+
+  .panel--weather h1 {
+    font-size: clamp(0.85rem, 2.7vw, 1.4rem);
+  }
+}
