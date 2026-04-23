@@ -1,28 +1,267 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>InfoLora</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal Escolar Inteligente - Dashboard Moderno e Atualizado">
+    <title>Portal Escolar Inteligente</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="page-shell">
-    <section class="info-board" aria-label="Painel institucional InfoLora">
-      <header class="brand-band brand-band--top" aria-hidden="true"></header>
-      <div class="brand-band brand-band--top-logos" aria-hidden="true"></div>
+    <div class="container">
+        <!-- SEÇÃO PRINCIPAL -->
+        <main class="main-section">
+            
+            <!-- HEADER -->
+            <header class="header">
+                <div class="header-content">
+                    <h1 class="logo">
+                        <span class="logo-icon">📚</span>
+                        Portal Escolar
+                    </h1>
+                    <p class="header-subtitle">Dashboard Inteligente</p>
+                </div>
+            </header>
 
-      <section class="content-row">
-        <section class="panel panel--main" aria-label="Area principal do painel"></section>
+            <!-- LAYOUT GRID COM WIDGET METEOROLÓGICO -->
+            <div class="layout-wrapper">
+                
+                <!-- CONTEÚDO PRINCIPAL -->
+                <section class="main-content">
+                    <div class="section-intro">
+                        <span class="section-kicker">Painel escolar inteligente</span>
+                        <h2 class="section-title">Informações em rotação automática</h2>
+                        <p class="section-description">Cada bloco permanece em destaque durante 10 segundos para leitura rápida e apresentação elegante.</p>
+                    </div>
 
-        <aside class="panel panel--weather" aria-label="Meteorologia">
-          <h1>METEREOLOGIA</h1>
-        </aside>
-      </section>
+                    <!-- CARDS SLIDER -->
+                    <div class="cards-grid cards-slider" id="cards-slider">
+                        
+                        <!-- CARD: SOBRE -->
+                        <div class="card about-card slide-panel is-active" data-panel="0">
+                            <div class="card-header">
+                                <h2 class="card-title">Sobre</h2>
+                                <span class="card-icon">ℹ️</span>
+                            </div>
+                            <div class="card-body">
+                                <p class="about-text">
+                                    Bem-vindo ao Portal Escolar Inteligente. Uma plataforma moderna 
+                                    e integrada para acompanhamento de informações escolares em tempo real.
+                                </p>
+                                <div class="info-items">
+                                    <div class="info-item">
+                                        <span class="info-label">Escola:</span>
+                                        <span class="info-value">Instituto Educacional Premium</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Localização:</span>
+                                        <span class="info-value">Pombal, Portugal</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-label">Fundada:</span>
+                                        <span class="info-value">2020</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-      <div class="brand-band brand-band--bottom-logos" aria-hidden="true"></div>
-      <footer class="brand-band brand-band--bottom" aria-hidden="true"></footer>
-    </section>
-  </main>
+                        <!-- CARD: CALENDÁRIO ESCOLAR -->
+                        <div class="card calendar-card slide-panel" data-panel="1">
+                            <div class="card-header">
+                                <h2 class="card-title">Calendário Escolar</h2>
+                                <span class="card-icon">📅</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="calendar-widget" id="calendar"></div>
+                                <div class="calendar-events">
+                                    <div class="event event-exam">
+                                        <span class="event-date">15-26 Maio</span>
+                                        <span class="event-name">Exames Finais</span>
+                                    </div>
+                                    <div class="event event-holiday">
+                                        <span class="event-date">1-31 Junho</span>
+                                        <span class="event-name">Férias de Verão</span>
+                                    </div>
+                                    <div class="event event-activity">
+                                        <span class="event-date">5 Maio</span>
+                                        <span class="event-name">Dia da Escola</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD: QUALIDADE DO AR -->
+                        <div class="card air-quality-card slide-panel" data-panel="2">
+                            <div class="card-header">
+                                <h2 class="card-title">Qualidade do Ar</h2>
+                                <span class="card-icon">💨</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="air-quality-grid">
+                                    <div class="room-air-quality" data-room="317">
+                                        <div class="room-number">Sala 317</div>
+                                        <div class="air-indicator excellent">
+                                            <div class="air-bar"></div>
+                                            <span class="air-label">Excelente</span>
+                                        </div>
+                                        <div class="air-value">32 ppm</div>
+                                    </div>
+                                    <div class="room-air-quality" data-room="318">
+                                        <div class="room-number">Sala 318</div>
+                                        <div class="air-indicator good">
+                                            <div class="air-bar"></div>
+                                            <span class="air-label">Bom</span>
+                                        </div>
+                                        <div class="air-value">425 ppm</div>
+                                    </div>
+                                    <div class="room-air-quality" data-room="319">
+                                        <div class="room-number">Sala 319</div>
+                                        <div class="air-indicator good">
+                                            <div class="air-bar"></div>
+                                            <span class="air-label">Bom</span>
+                                        </div>
+                                        <div class="air-value">450 ppm</div>
+                                    </div>
+                                    <div class="room-air-quality" data-room="320">
+                                        <div class="room-number">Sala 320</div>
+                                        <div class="air-indicator fair">
+                                            <div class="air-bar"></div>
+                                            <span class="air-label">Aceitável</span>
+                                        </div>
+                                        <div class="air-value">680 ppm</div>
+                                    </div>
+                                    <div class="room-air-quality" data-room="321">
+                                        <div class="room-number">Sala 321</div>
+                                        <div class="air-indicator fair">
+                                            <div class="air-bar"></div>
+                                            <span class="air-label">Aceitável</span>
+                                        </div>
+                                        <div class="air-value">720 ppm</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD: EMENTA DO ALMOÇO -->
+                        <div class="card menu-card slide-panel" data-panel="3">
+                            <div class="card-header">
+                                <h2 class="card-title">Ementa do Almoço</h2>
+                                <span class="card-icon">🍽️</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="menu-date" id="menu-date"></div>
+                                <div class="menu-items">
+                                    <div class="menu-item">
+                                        <span class="menu-label">Entrada:</span>
+                                        <span class="menu-value">Sopa de Abóbora</span>
+                                    </div>
+                                    <div class="menu-item">
+                                        <span class="menu-label">Prato Principal:</span>
+                                        <span class="menu-value">Frango Grelhado com Batata e Abóbora</span>
+                                    </div>
+                                    <div class="menu-item">
+                                        <span class="menu-label">Acompanhamento:</span>
+                                        <span class="menu-value">Salada Mista</span>
+                                    </div>
+                                    <div class="menu-item">
+                                        <span class="menu-label">Sobremesa:</span>
+                                        <span class="menu-value">Maçã Fresca</span>
+                                    </div>
+                                    <div class="menu-item">
+                                        <span class="menu-label">Bebida:</span>
+                                        <span class="menu-value">Água ou Sumo Natural</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD: CONSUMO DIÁRIO -->
+                        <div class="card consumption-card slide-panel" data-panel="4">
+                            <div class="card-header">
+                                <h2 class="card-title">Consumo Escolar</h2>
+                                <span class="card-icon">⚡</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="consumption-comparison" id="consumption-comparison">
+                                    <!-- Conteúdo dinâmico -->
+                                </div>
+                                <div class="consumption-details">
+                                    <div class="consumption-item">
+                                        <div class="consumption-type">
+                                            <span class="consumption-icon">💡</span>
+                                            <span class="consumption-name">Eletricidade</span>
+                                        </div>
+                                        <span class="consumption-value">285 kWh</span>
+                                    </div>
+                                    <div class="consumption-item">
+                                        <div class="consumption-type">
+                                            <span class="consumption-icon">💧</span>
+                                            <span class="consumption-name">Água</span>
+                                        </div>
+                                        <span class="consumption-value">1.240 L</span>
+                                    </div>
+                                    <div class="consumption-item">
+                                        <div class="consumption-type">
+                                            <span class="consumption-icon">🌡️</span>
+                                            <span class="consumption-name">Aquecimento</span>
+                                        </div>
+                                        <span class="consumption-value">92 kWh</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="slider-status" id="slider-status" aria-live="polite">
+                        <span class="slider-label">A seguir:</span>
+                        <span class="slider-current">Sobre</span>
+                        <div class="slider-dots" id="slider-dots" aria-hidden="true"></div>
+                    </div>
+                </section>
+
+                <!-- WIDGET METEOROLÓGICO (SIDEBAR) -->
+                <aside class="weather-widget" id="weather-widget">
+                    <div class="weather-top">
+                        <div class="digital-clock" id="digital-clock">
+                            <span class="clock-time">00:00:00</span>
+                        </div>
+                    </div>
+
+                    <div class="weather-location" id="weather-location">
+                        <span class="location-text">Pombal</span>
+                    </div>
+
+                    <div class="weather-main" id="weather-main">
+                        <div class="weather-temp">
+                            <span class="temp-value" id="current-temp">15</span>
+                            <span class="temp-unit">°</span>
+                        </div>
+                        <div class="weather-status" id="weather-status">
+                            <span class="status-text">Bastante nublado</span>
+                            <span class="status-wind">Rajadas até 13 km/h</span>
+                        </div>
+                    </div>
+
+                    <div class="weather-forecast" id="weather-forecast">
+                        <!-- Conteúdo dinâmico -->
+                    </div>
+
+                    <div class="weather-10days">
+                        <div class="forecast-label">
+                            <span class="forecast-icon">📋</span>
+                            <span class="forecast-title">Previsão (7 Dias)</span>
+                        </div>
+                        <div class="weather-10days-items" id="weather-10days">
+                            <!-- Conteúdo dinâmico -->
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
